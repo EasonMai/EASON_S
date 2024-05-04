@@ -249,6 +249,46 @@ double rounding_off(double source;long want_to){
 	source/=want_to;
 	return source;
 }
+/*Tom li（李岱轩） 出品,仅供学习使用！！！未经作者同意禁止转载！！*/ 
 
+
+int bracket_left_position;			//记录左括号的位置 
+int bracket_right_position;			//记录右括号的位置 
+int bracket_counter;
+char bracket_str[100];
+void bracket(char bracket_left,char bracket_right,char str_bracketFunction[100])
+{
+	for (bracket_counter=0;bracket_counter<=99;++bracket_counter)
+	{
+		if (str_bracketFunction[bracket_counter]==bracket_right)
+		{
+			bracket_right_position=bracket_counter;
+			break;
+		}
+	}
+	
+	
+	
+	for (bracket_counter=bracket_right_position;bracket_counter>=0;--bracket_counter)
+	{
+		if (str_bracketFunction[bracket_counter]==bracket_left)
+		{
+			bracket_left_position=bracket_counter;
+			break;
+		}
+	}
+	//cout<<"left:"<<bracket_left_position<<endl;
+	//cout<<"right:"<<bracket_right_position<<endl;
+	
+	
+	
+	for (int bracket_str_counter=0,bracket_counter=bracket_left_position+1;
+		bracket_str_counter<bracket_right_position-bracket_left_position-1,bracket_counter<bracket_right_position;
+		++bracket_str_counter,++bracket_counter)
+	{
+		bracket_str[bracket_str_counter]=str_bracketFunction[bracket_counter];
+	}
+	return bracket_str 
+}
 
 #endif
