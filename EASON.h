@@ -128,8 +128,8 @@
 #include <unordered_set>
 
 
-#define MAXCHAR 101 /*×î´óÔÊÐí×Ö·û´®³¤¶È*/
-/*½«×Ö·û×ª»»³ÉÊý×Ö*/
+#define MAXCHAR 101 /*æœ€å¤§å…è®¸å­—ç¬¦ä¸²é•¿åº¦*/
+/*å°†å­—ç¬¦è½¬æ¢æˆæ•°å­—*/
 
 int char_to_num(char ch)
 
@@ -137,11 +137,11 @@ int char_to_num(char ch)
 
 if(ch>='0' && ch<='9')
 
-return ch-'0'; /*½«Êý×Ö×Ö·û×ª»»³ÉÊý×Ö*/
+return ch-'0'; /*å°†æ•°å­—å­—ç¬¦è½¬æ¢æˆæ•°å­—*/
 
 else
 
-return ch-'A'+10; /*½«×ÖÄ¸×Ö·û×ª»»³ÉÊý×Ö*/
+return ch-'A'+10; /*å°†å­—æ¯å­—ç¬¦è½¬æ¢æˆæ•°å­—*/
 
 }
 
@@ -151,11 +151,11 @@ char num_to_char(int num)
 
 if(num>=0 && num<=9)
 
-return (char)('0'+num-0); /*½«0~9Ö®¼äµÄÊý×Ö×ª»»³É×Ö·û*/
+return (char)('0'+num-0); /*å°†0~9ä¹‹é—´çš„æ•°å­—è½¬æ¢æˆå­—ç¬¦*/
 
 else
 
-return (char)('A'+num-10); /*½«´óÓÚ10µÄÊý×Ö×ª»»³É×Ö·û*/
+return (char)('A'+num-10); /*å°†å¤§äºŽ10çš„æ•°å­—è½¬æ¢æˆå­—ç¬¦*/
 
 }
 
@@ -163,7 +163,7 @@ long source_to_decimal(char temp[], int source)
 
 {
 
-long decimal_num = 0; /*´æ´¢Õ¹¿ªÖ®ºóµÄºÍ*/
+long decimal_num = 0; /*å­˜å‚¨å±•å¼€ä¹‹åŽçš„å’Œ*/
 
 int length;
 
@@ -173,7 +173,7 @@ for( i=0; temp[i]!='\0'; i++ );
 
 length=i;
 
-for( i=0; i<=length-1; i++ ) /*ÀÛ¼Ó*/
+for( i=0; i<=length-1; i++ ) /*ç´¯åŠ */
 
 decimal_num = (decimal_num*source) + char_to_num(temp[i]);
 
@@ -191,9 +191,9 @@ while(decimal_num)
 
 {
 
-temp[i] = num_to_char(decimal_num % object); /*Çó³öÓàÊý²¢×ª»»Îª×Ö·û*/
+temp[i] = num_to_char(decimal_num % object); /*æ±‚å‡ºä½™æ•°å¹¶è½¬æ¢ä¸ºå­—ç¬¦*/
 
-decimal_num = decimal_num / object; /*ÓÃÊ®½øÖÆÊý³ýÒÔ»ùÊý*/
+decimal_num = decimal_num / object; /*ç”¨åè¿›åˆ¶æ•°é™¤ä»¥åŸºæ•°*/
 
 i++;
 
@@ -210,15 +210,15 @@ int Base_converter(char temp[MAXCHAR];long decimal_num;int length;int object;int
 
 	
 	
-	 /*source´æ´¢Ô­ÊýÖÆ*/
+	 /*sourceå­˜å‚¨åŽŸæ•°åˆ¶*/
 
-	 /*object´æ´¢Ä¿±êÊýÖÆ*/
+	 /*objectå­˜å‚¨ç›®æ ‡æ•°åˆ¶*/
 
-	 /*length´æ´¢×ª»»³ÉÄ¿±êÊýÖÆºó×Ö·ûÊý×éµÄ³¤¶È*/
+	 /*lengthå­˜å‚¨è½¬æ¢æˆç›®æ ‡æ•°åˆ¶åŽå­—ç¬¦æ•°ç»„çš„é•¿åº¦*/
 
-	 /*decimal_num´æ´¢×ª»»³ÉµÄ10½øÖÆÊý*/
+	 /*decimal_numå­˜å‚¨è½¬æ¢æˆçš„10è¿›åˆ¶æ•°*/
 
-	 /*temp:´æ´¢´ý×ª»»µÄÊýÖµºÍ×ª»»ºóµÄÊýÖµ*/
+	 /*temp:å­˜å‚¨å¾…è½¬æ¢çš„æ•°å€¼å’Œè½¬æ¢åŽçš„æ•°å€¼*/
 	
 
 
@@ -249,11 +249,11 @@ double rounding_off(double source;long want_to){
 	source/=want_to;
 	return source;
 }
-/*Tom li£¨Àîá·Ðù£© ³öÆ·,½ö¹©Ñ§Ï°Ê¹ÓÃ£¡£¡£¡Î´¾­×÷ÕßÍ¬Òâ½ûÖ¹×ªÔØ£¡£¡*/ 
+/*Tom liå‡ºå“,ä»…ä¾›å­¦ä¹ ä½¿ç”¨ï¼ï¼ï¼æœªç»ä½œè€…åŒæ„ç¦æ­¢è½¬è½½ï¼ï¼*/ 
 
 
-int bracket_left_position;			//¼ÇÂ¼×óÀ¨ºÅµÄÎ»ÖÃ 
-int bracket_right_position;			//¼ÇÂ¼ÓÒÀ¨ºÅµÄÎ»ÖÃ 
+int bracket_left_position;			//è®°å½•å·¦æ‹¬å·çš„ä½ç½® 
+int bracket_right_position;			//è®°å½•å³æ‹¬å·çš„ä½ç½® 
 int bracket_counter;
 char bracket_str[100];
 void bracket(char bracket_left,char bracket_right,char str_bracketFunction[100])
