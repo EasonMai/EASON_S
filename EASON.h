@@ -128,8 +128,8 @@
 #include <unordered_set>
 
 
-#define MAXCHAR 101 /*æœ€å¤§å…è®¸å­—ç¬¦ä¸²é•¿åº¦*/
-/*å°†å­—ç¬¦è½¬æ¢æˆæ•°å­—*/
+#define MAXCHAR 101 /*×î´óÔÊĞí×Ö·û´®³¤¶È*/
+/*½«×Ö·û×ª»»³ÉÊı×Ö*/
 
 int char_to_num(char ch)
 
@@ -137,11 +137,11 @@ int char_to_num(char ch)
 
 if(ch>='0' && ch<='9')
 
-return ch-'0'; /*å°†æ•°å­—å­—ç¬¦è½¬æ¢æˆæ•°å­—*/
+return ch-'0'; /*½«Êı×Ö×Ö·û×ª»»³ÉÊı×Ö*/
 
 else
 
-return ch-'A'+10; /*å°†å­—æ¯å­—ç¬¦è½¬æ¢æˆæ•°å­—*/
+return ch-'A'+10; /*½«×ÖÄ¸×Ö·û×ª»»³ÉÊı×Ö*/
 
 }
 
@@ -151,11 +151,11 @@ char num_to_char(int num)
 
 if(num>=0 && num<=9)
 
-return (char)('0'+num-0); /*å°†0~9ä¹‹é—´çš„æ•°å­—è½¬æ¢æˆå­—ç¬¦*/
+return (char)('0'+num-0); /*½«0~9Ö®¼äµÄÊı×Ö×ª»»³É×Ö·û*/
 
 else
 
-return (char)('A'+num-10); /*å°†å¤§äº10çš„æ•°å­—è½¬æ¢æˆå­—ç¬¦*/
+return (char)('A'+num-10); /*½«´óÓÚ10µÄÊı×Ö×ª»»³É×Ö·û*/
 
 }
 
@@ -163,7 +163,7 @@ long source_to_decimal(char temp[], int source)
 
 {
 
-long decimal_num = 0; /*å­˜å‚¨å±•å¼€ä¹‹åçš„å’Œ*/
+long decimal_num = 0; /*´æ´¢Õ¹¿ªÖ®ºóµÄºÍ*/
 
 int length;
 
@@ -173,7 +173,7 @@ for( i=0; temp[i]!='\0'; i++ );
 
 length=i;
 
-for( i=0; i<=length-1; i++ ) /*ç´¯åŠ */
+for( i=0; i<=length-1; i++ ) /*ÀÛ¼Ó*/
 
 decimal_num = (decimal_num*source) + char_to_num(temp[i]);
 
@@ -191,9 +191,9 @@ while(decimal_num)
 
 {
 
-temp[i] = num_to_char(decimal_num % object); /*æ±‚å‡ºä½™æ•°å¹¶è½¬æ¢ä¸ºå­—ç¬¦*/
+temp[i] = num_to_char(decimal_num % object); /*Çó³öÓàÊı²¢×ª»»Îª×Ö·û*/
 
-decimal_num = decimal_num / object; /*ç”¨åè¿›åˆ¶æ•°é™¤ä»¥åŸºæ•°*/
+decimal_num = decimal_num / object; /*ÓÃÊ®½øÖÆÊı³ıÒÔ»ùÊı*/
 
 i++;
 
@@ -210,15 +210,15 @@ int Base_converter(char temp[MAXCHAR];long decimal_num;int length;int object;int
 
 	
 	
-	 /*sourceå­˜å‚¨åŸæ•°åˆ¶*/
+	 /*source´æ´¢Ô­ÊıÖÆ*/
 
-	 /*objectå­˜å‚¨ç›®æ ‡æ•°åˆ¶*/
+	 /*object´æ´¢Ä¿±êÊıÖÆ*/
 
-	 /*lengthå­˜å‚¨è½¬æ¢æˆç›®æ ‡æ•°åˆ¶åå­—ç¬¦æ•°ç»„çš„é•¿åº¦*/
+	 /*length´æ´¢×ª»»³ÉÄ¿±êÊıÖÆºó×Ö·ûÊı×éµÄ³¤¶È*/
 
-	 /*decimal_numå­˜å‚¨è½¬æ¢æˆçš„10è¿›åˆ¶æ•°*/
+	 /*decimal_num´æ´¢×ª»»³ÉµÄ10½øÖÆÊı*/
 
-	 /*temp:å­˜å‚¨å¾…è½¬æ¢çš„æ•°å€¼å’Œè½¬æ¢åçš„æ•°å€¼*/
+	 /*temp:´æ´¢´ı×ª»»µÄÊıÖµºÍ×ª»»ºóµÄÊıÖµ*/
 	
 
 
@@ -249,11 +249,11 @@ double rounding_off(double source;long want_to){
 	source/=want_to;
 	return source;
 }
-/*Tom liå‡ºå“,ä»…ä¾›å­¦ä¹ ä½¿ç”¨ï¼ï¼ï¼æœªç»ä½œè€…åŒæ„ç¦æ­¢è½¬è½½ï¼ï¼*/ 
+/*Tom ³öÆ·,½ö¹©Ñ§Ï°Ê¹ÓÃ£¡£¡£¡Î´¾­×÷ÕßÍ¬Òâ½ûÖ¹×ªÔØ£¡£¡*/ 
 
 
-int bracket_left_position;			//è®°å½•å·¦æ‹¬å·çš„ä½ç½® 
-int bracket_right_position;			//è®°å½•å³æ‹¬å·çš„ä½ç½® 
+int bracket_left_position;			//¼ÇÂ¼×óÀ¨ºÅµÄÎ»ÖÃ 
+int bracket_right_position;			//¼ÇÂ¼ÓÒÀ¨ºÅµÄÎ»ÖÃ 
 int bracket_counter;
 char bracket_str[100];
 void bracket(char bracket_left,char bracket_right,char str_bracketFunction[100])
@@ -291,4 +291,222 @@ void bracket(char bracket_left,char bracket_right,char str_bracketFunction[100])
 	return bracket_str 
 }
 
+
+
+//´Ë´¦Îª×ªÔØ 
+bool append_arr(struct Arr* arrs, int val);//×·¼Ó
+bool insert_arr(struct Arr* arrs,int pos,int val);
+bool delete_arr(struct Arr* arrs, int pos, int pval);
+int get_();
+bool is_emptys(struct Arr arr);
+bool is_full(struct Arr arr);
+void sort_arr();
+void show_arr(struct Arr &arrs);
+void inversion_arr();
+void init_arr(struct Arr arrs, int length);
+struct Arr arrs;
+int length = 6;
+int val;
+
+bool is_emptys(struct Arr* arrs)
+{
+	if (arrs->cnt==0)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+
+//Õ¹Ê¾Êı×éÖĞËùÓĞÔªËØ
+
+void show_arr(struct Arr& arr)
+{
+	//¾­µä·ÖÎö£ºvoid show_arr(struct Arr* arr,int length)
+	//ÄÇÃ´arrÖ¸Õë±äÁ¿Ö¸Ïò½á¹¹ÌåarrÖĞµÄpabse±äÁ¿£ºarr->pabase//ÀàĞÍÊÇint*
+	//&arr±íÊ¾µÄÊÇÈ¥Ö¸Õë±äÁ¿arrµÄµØÖ·£¬Ö¸Õë±äÁ¿Îªint ĞÍºÅ£¬²¢²»ÊÇstruct arr*µÄÖ¸Õë±äÁ¿
+
+	if (is_emptys(&arr))
+	{
+		cout << "Êı×éÎª¿Õ" << endl;
+	}
+	else
+	{ 
+		for (int i = 0;i < arr.cnt;i++)
+		{
+			cout << "Êı×éµÄÖµ´óĞ¡Îª£º" << *(arr.pbase) << " " << "µØÖ·Îª£º " << arr.pbase << endl;
+			arr.pbase++;
+		}
+	
+	}
+	
+}
+
+
+//Êı×é³õÊ¼»¯
+
+void init_arr(struct Arr* arrs,int length)
+{
+	arrs->pbase = (int*)malloc(sizeof(int) * length);  **//Ïàµ±ÓÚarrsÖ¸Õë±äÁ¿ËùÖ¸Ïò½á¹¹Ìå±äÁ¿ÖĞµÄpbase**
+	if (NULL == arrs->pbase)
+	{
+		printf("¶¯Ì¬ÄÚ´æ·ÖÅäÊ§°Ü");
+		exit(-1);//ÖÕÖ¹Õû¸ö³ÌĞò
+	}
+	else
+	{
+		arrs->len = length;
+		arrs->cnt = 0;
+	}
+	return;//º¯ÊıÖÕÖ¹
+
+}
+
+
+//Êı×é×·¼Ó
+
+bool append_arr(struct Arr* arrs, int val)
+{
+	if (is_full(arrs))
+	{
+		return false;
+	}
+	else
+	{
+		arrs->pbase[arrs->cnt] = val;
+		(arrs->cnt)++;
+		return true;
+	}
+}
+
+//ÅĞ¶ÏÊı×éÊÇ·ñÂú
+
+bool is_full(struct Arr* arr)
+{
+	if (arr->cnt == arr->len)
+	{
+		printf("%s\n", "Êı×éÒÑÂúÁË");
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+
+//²åÈëÊı×é
+
+bool insert_arr(struct Arr* arrs, int pos, int val)
+{
+	if (is_full(arrs))
+	{
+		return false;
+	}
+	if (pos<1 || pos>arrs->cnt + 1)
+		return false;
+	//ÔÚµÚ3¸öÎ»ÖÃ²åÈëÊı×Ö8£¬ÄÇÃ´Ë÷Òı2£¬ÍùºóµÄÊı×ÖÈ«²¿ÒªÆ«ÒÆ  
+	for (int i = arrs->cnt;i >=pos;i--)
+	{
+		arrs->pbase[i] = arrs->pbase[i-1];
+			
+	}
+	arrs->pbase[pos - 1] = val;
+	(arrs->cnt)++;
+
+	
+}
+
+
+//É¾³ıÊı×éÖĞÖ¸¶¨Î»ÖÃÉ¾³ıÄ³¸öÔªËØ
+
+bool delete_arr(struct Arr* arrs, int pos, int* pval)
+{
+	if (is_emptys(arrs))
+	{
+		cout << "Êı×éÎª¿Õ" << endl;
+	}
+	*pval=arrs->pbase[pos - 1];
+	if (pos<1 || pos>arrs->cnt)
+		return false;
+	else
+	{
+		for (int i = pos-1;i < arrs->cnt;i++)
+		{
+			arrs->pbase[i] = arrs->pbase[i+1];
+		}
+		(arrs->cnt)--;
+		
+	}
+	return true;
+}
+
+//Ô­ÎÄÁ´½Ó£ºhttps://blog.csdn.net/m0_46308537/article/details/127125801
+void swimming_pool_admin()//don't use
+{
+	char past_word="Github",a={},b[11];
+	int num_of_times[1000]={},c,d=-1;
+	cout<<"past_word:";
+	cin>>a;
+	
+	if(past_word==a){
+		ifstream f("swimming_data.txt")
+		ofstream f("swimming_data.txt")
+		char phone_num[1000]={},
+		cout<<"please wait a moment..."
+	    for(int i=0;i<=2000;i++){
+	    	if((i+1)%2!=0){
+	    		f.getline(phone_num,11)
+			} 
+			else {
+				f.get(a)
+			    f.getline(num_of_times,a)
+			} 
+		}
+		while(1){
+			system("cls")
+		    cout<<"choose the things you want do:"
+		    cout<<"1.add user"
+		    cout<<"2.change user's number of times"
+		    cout<<"3.exit"
+		    cin>>a;
+		    switch(a){
+		    	case 1:{
+		    		cout<<"name(telephone_number):"
+		    		scanf("%s",&b);
+		    		cout<<"number of times:"
+		    		cin>>c;
+					 
+					break;
+				}
+		    	case 2:{
+		    		cout<<"name(telephone_number):"
+		    		scanf("%s",&b);
+		    		cout<<"number of times:"
+		    		cin>>c;
+		    		for(int i=0;i<=1000;i++){
+		    			if(b==phone_num){d=i;
+		    			   break;
+						}
+						
+					}
+					if(d=-1)cout<<"no found."
+					else {
+						num_of_times[d]=c;
+						cout<<"Modified successfully!" 
+					}
+					break;
+				}
+		    	case 3:break; 
+			}
+			if(a==3){
+				cout<<"admin,have a nice day!";
+				break;
+			}
+			else continue;
+		}
+	}
+	else cout<<"go away!guys.";
+ } 
 #endif
