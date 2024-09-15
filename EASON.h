@@ -138,7 +138,7 @@ int Char2Int(char target) {
     if (target >= '0' && target <= '9') {
         return target - '0';
     } else {
-        return target - 'A' + 10;
+        return target - 'a' + 10;
     }
 }
 // M进制转换成十进制的数返回
